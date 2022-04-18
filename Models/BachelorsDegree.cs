@@ -28,6 +28,18 @@ namespace AtividadeBancoNotas.Models
           
 
       }
+       public override void DurationOfCourses()
+        {
+            var duration = 48;
+            var description = GetDescription();
+            if (description.Contains("Engineer") == true)
+            {
+                duration = 60;
+            }
+            
+            SetDuration(duration);
+        }
+
       
 
     }

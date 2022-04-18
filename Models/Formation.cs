@@ -40,6 +40,14 @@ namespace AtividadeBancoNotas.Models
             Duration = duration;
 
         }
+
+        public virtual void DurationOfCourses()
+        {
+            SetDuration(0);
+        }
+     
+     
+
         public double DisplayAverage(double semesterExamOne, double semesterExamTwo)
         {
             var AverageGrade = (semesterExamOne + semesterExamTwo) / 2;

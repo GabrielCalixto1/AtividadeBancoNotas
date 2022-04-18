@@ -16,5 +16,10 @@ namespace AtividadeBancoNotas.Models
         {
             var amountMonthly = (GetDuration() * factor * 7);
         }
+        public override void DurationOfCourses()
+        {
+            SetDuration(36);
+        }
+
     }
 }
