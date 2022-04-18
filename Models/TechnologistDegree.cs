@@ -4,9 +4,9 @@ namespace AtividadeBancoNotas.Models
     {
         public bool ExtendedPlan { get; set; }
 
-        public void MonthlyFeeCalculate(double factor)
+        public override void MonthlyFeeCalculate(double factor)
         {
-        var amountMonthly = (GetDuration() * factor * 8);
+          SetMonthlyPayment((GetDuration() * factor * 8));
         }
         public override void DurationOfCourses()
         {

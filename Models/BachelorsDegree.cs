@@ -22,9 +22,9 @@ namespace AtividadeBancoNotas.Models
             WorkloadIntership = workloadIntership;
         }
 
-      public void MonthlyFeeCalculate(double factor)
+      public override void MonthlyFeeCalculate(double factor)
       {
-         var amountMonthly = (GetDuration() * factor * 8) + (WorkloadIntership * 12);
+         SetMonthlyPayment((GetDuration() * factor * 8) + (WorkloadIntership * 12));
           
 
       }

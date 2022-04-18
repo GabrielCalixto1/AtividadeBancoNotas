@@ -7,6 +7,8 @@ namespace AtividadeBancoNotas.Models
         private double MonthlyPayment { get; set; }
         private int Duration { get; set; }
 
+     
+
         public string GetDescription()
         {
             return Description;
@@ -45,6 +47,12 @@ namespace AtividadeBancoNotas.Models
         {
             SetDuration(0);
         }
+        public virtual void MonthlyFeeCalculate(double factor)
+      {
+         SetMonthlyPayment(0);
+          
+
+      }
      
      
 

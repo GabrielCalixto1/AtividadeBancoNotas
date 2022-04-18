@@ -12,9 +12,9 @@ namespace AtividadeBancoNotas.Models
         {
            Type = type;
         }
-        public void MonthlyFeeCalculate(double factor)
+        public override void MonthlyFeeCalculate(double factor)
         {
-            var amountMonthly = (GetDuration() * factor * 7);
+            SetMonthlyPayment((GetDuration() * factor * 7));
         }
         public override void DurationOfCourses()
         {
