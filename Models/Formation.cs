@@ -7,49 +7,53 @@ namespace AtividadeBancoNotas.Models
         private double MonthlyPayment { get; set; }
         private int Duration { get; set; }
 
-        public string SetDescription() 
+        public string GetDescription()
         {
-           return Description;
+            return Description;
         }
-        public void GetDescription(string description) 
+        public void SetDescription(string description)
         {
             Description = description;
         }
-        public int SetTimeCourse() 
+        public int GetTimeCourse()
         {
             return TimeCourse;
         }
-        public void GetTimeCourse(int timeCourse) 
+        public void SetTimeCourse(int timeCourse)
         {
             TimeCourse = timeCourse;
         }
-        public double SetMonthlyPayment() 
+        public double GetMonthlyPayment()
         {
             return MonthlyPayment;
         }
-        public void GetMonthlyPayment(double monthlyPayment) 
+        public void SetMonthlyPayment(double monthlyPayment)
         {
             MonthlyPayment = monthlyPayment;
         }
-        public int SetDuration() 
+        public int GetDuration()
         {
-           return Duration;
+            return Duration;
         }
-        public void GetDuration(int duration) 
+        public void SetDuration(int duration)
         {
             Duration = duration;
-        }
-        public double DisplayAverage(double SemesterExamOne, double SemesterExamTwo)
-        {
 
         }
-        public double DisplayAverage(double SemesterExamOne, double SemesterExamTwo, double CourseworkOne, double CourseworkTwo)
+        public double DisplayAverage(double semesterExamOne, double semesterExamTwo)
         {
-
+            var AverageGrade = (semesterExamOne + semesterExamTwo) / 2;
+            return AverageGrade;
         }
-        public double DisplayAverage(double SemesterExamOne, double SemesterExamTwo, double CourseworkOne, double CourseworkTwo, double MonthlyExamOne, double MonthlyExamTwo)
+        public double DisplayAverage(double semesterExamOne, double semesterExamTwo, double courseworkOne, double courseworkTwo)
         {
-
+            var AverageGrade = (semesterExamOne + semesterExamTwo + courseworkOne + courseworkTwo) / 4;
+            return AverageGrade;
+        }
+        public double DisplayAverage(double semesterExamOne, double semesterExamTwo, double courseworkOne, double courseworkTwo, double monthlyExamOne, double monthlyExamTwo)
+        {
+            var AverageGrade = (semesterExamOne + semesterExamTwo + courseworkOne + courseworkTwo + monthlyExamOne + monthlyExamTwo) / 6;
+            return AverageGrade;
         }
 
 

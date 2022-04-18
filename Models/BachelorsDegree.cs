@@ -1,10 +1,10 @@
 namespace AtividadeBancoNotas.Models
 {
-    public class BachelorsDegree
+    public class BachelorsDegree : Formation
     {
       private string ConclusionProject {get; set;}
       private int WorkloadIntership {get; set;}
-      
+
       public string SetConclusionProject() 
         {
            return ConclusionProject;
@@ -24,6 +24,7 @@ namespace AtividadeBancoNotas.Models
 
       public void MonthlyFeeCalculate(double factor)
       {
+          SetDuration(); * 
 
       }
       
