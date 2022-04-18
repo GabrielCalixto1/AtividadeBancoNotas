@@ -1,6 +1,6 @@
 namespace AtividadeBancoNotas.Models
 {
-    public class HighSchool
+    public class HighSchool : Formation
     {
         public string Type {get; set;}
 
@@ -14,7 +14,7 @@ namespace AtividadeBancoNotas.Models
         }
         public void MonthlyFeeCalculate(double factor)
         {
-
+            var amountMonthly = (GetDuration() * factor * 7);
         }
     }
 }

@@ -24,7 +24,8 @@ namespace AtividadeBancoNotas.Models
 
       public void MonthlyFeeCalculate(double factor)
       {
-          SetDuration(); * 
+         var amountMonthly = (GetDuration() * factor * 8) + (WorkloadIntership * 12);
+          
 
       }
       
