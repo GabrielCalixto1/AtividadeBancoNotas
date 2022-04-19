@@ -2,8 +2,15 @@ namespace AtividadeBancoNotas.Models
 {
     public class BachelorsDegree : Formation
     {
-      private string ConclusionProject {get; set;}
+        public BachelorsDegree(string description) : base(description)
+        {
+            SetDurationOfCourses();
+            MonthlyFeeCalculate(5);
+        }
+
+        private string ConclusionProject {get; set;}
       private int WorkloadIntership {get; set;}
+
 
       public string SetConclusionProject() 
         {
@@ -28,11 +35,11 @@ namespace AtividadeBancoNotas.Models
           
 
       }
-       public override void DurationOfCourses()
+       public override void SetDurationOfCourses()
         {
             var duration = 48;
             var description = GetDescription();
-            if (description.Contains("Engineer") == true)
+            if (description.Contains("Engenharia") == true)
             {
                 duration = 60;
             }

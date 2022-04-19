@@ -7,7 +7,11 @@ namespace AtividadeBancoNotas.Models
         private double MonthlyPayment { get; set; }
         private int Duration { get; set; }
 
-     
+public Formation(string description)
+{
+    Description = description;
+ 
+}
 
         public string GetDescription()
         {
@@ -43,7 +47,7 @@ namespace AtividadeBancoNotas.Models
 
         }
 
-        public virtual void DurationOfCourses()
+        public virtual void SetDurationOfCourses()
         {
             SetDuration(0);
         }
@@ -56,21 +60,24 @@ namespace AtividadeBancoNotas.Models
      
      
 
+       
         public double DisplayAverage(double semesterExamOne, double semesterExamTwo)
         {
-            var AverageGrade = (semesterExamOne + semesterExamTwo) / 2;
-            return AverageGrade;
+            var averageGrade = (semesterExamOne + semesterExamTwo) / 2; 
+            return averageGrade;
         }
         public double DisplayAverage(double semesterExamOne, double semesterExamTwo, double courseworkOne, double courseworkTwo)
         {
-            var AverageGrade = (semesterExamOne + semesterExamTwo + courseworkOne + courseworkTwo) / 4;
-            return AverageGrade;
+
+            var averageGrade = ((DisplayAverage(semesterExamOne, semesterExamTwo)*0.5) + (((courseworkOne + courseworkTwo) / 2)*0.2));
+            return averageGrade;
         }
         public double DisplayAverage(double semesterExamOne, double semesterExamTwo, double courseworkOne, double courseworkTwo, double monthlyExamOne, double monthlyExamTwo)
         {
-            var AverageGrade = (semesterExamOne + semesterExamTwo + courseworkOne + courseworkTwo + monthlyExamOne + monthlyExamTwo) / 6;
-            return AverageGrade;
+            var averageGrade = (DisplayAverage(semesterExamOne, semesterExamTwo, courseworkOne, courseworkTwo) + (((monthlyExamOne + monthlyExamTwo)/2)*0.3)); 
+            return averageGrade;
         }
+
 
 
 

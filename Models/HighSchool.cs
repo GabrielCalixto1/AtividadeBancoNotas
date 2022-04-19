@@ -2,21 +2,28 @@ namespace AtividadeBancoNotas.Models
 {
     public class HighSchool : Formation
     {
-        public string Type {get; set;}
-
-        public string SetType() 
+            public HighSchool(string description) : base(description)
         {
-           return Type;
+            SetDurationOfCourses();
+            MonthlyFeeCalculate(5);
         }
-        public void GetType(string type) 
+
+
+        public string Type1 {get; set;}
+
+        public string SetType1() 
         {
-           Type = type;
+           return Type1;
+        }
+        public void GetType1(string type) 
+        {
+           Type1 = type;
         }
         public override void MonthlyFeeCalculate(double factor)
         {
             SetMonthlyPayment((GetDuration() * factor * 7));
         }
-        public override void DurationOfCourses()
+        public override void SetDurationOfCourses()
         {
             SetDuration(36);
         }
